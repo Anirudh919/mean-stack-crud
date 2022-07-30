@@ -10,10 +10,10 @@ import { ApiService } from 'src/app/service/api.service';
 export class DepartmentCreateComponent implements OnInit {
   submitted = false;
   departmentform = this.fb.group({
-    departmentid: [''],
-    departmentname: [''],
+    deptid: [''],
+    dname: [''],
     mgrid: [''],
-    loactionid: [''],
+    locationid: [''],
   });
 
   constructor(public fb: FormBuilder, private apiService: ApiService) {}
@@ -26,7 +26,7 @@ export class DepartmentCreateComponent implements OnInit {
       return false;
     } else {
       return this.apiService
-        .createEmployee(this.departmentform.value)
+        .createdepartment(this.departmentform.value)
         .subscribe({
           complete: () => {
             console.log('Employee successfully created!');

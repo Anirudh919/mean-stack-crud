@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
+  createdepartment(data: any): Observable<any> {
+    let url = `${this.baseUri}/departmentinsert`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+  }
   getEmployees() {
     return this.http.get(`${this.baseUri}/employee`);
   }
